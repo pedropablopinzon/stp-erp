@@ -1,0 +1,80 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/stp-web/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/stp-web",
+        "index": "apps/stp-web/src/index.html",
+        "baseHref": "/",
+        "main": "apps/stp-web/src/main.tsx",
+        "polyfills": "apps/stp-web/src/polyfills.ts",
+        "tsConfig": "apps/stp-web/tsconfig.app.json",
+        "assets": ["apps/stp-web/src/favicon.ico", "apps/stp-web/src/assets"],
+        "styles": ["apps/stp-web/src/styles.scss"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "development": {
+          "extractLicenses": false,
+          "optimization": false,
+          "sourceMap": true,
+          "vendorChunk": true
+        },
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/stp-web/src/environments/environment.ts",
+              "with": "apps/stp-web/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "stp-web:build",
+        "hmr": true
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "stp-web:build:development"
+        },
+        "production": {
+          "buildTarget": "stp-web:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/stp-web/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/stp-web"],
+      "options": {
+        "jestConfig": "apps/stp-web/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

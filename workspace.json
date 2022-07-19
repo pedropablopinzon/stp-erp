@@ -2,6 +2,8 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "stp-backend": "apps/stp-backend"
+    "stp-backend": "apps/stp-backend",
+    "stp-web": "apps/stp-web",
+    "stp-web-e2e": "apps/stp-web-e2e"
   }
 }
