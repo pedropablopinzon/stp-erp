@@ -111,3 +111,13 @@ mysql -uroot -p
 #put/paste the password, and once inside MySQL CLI run
 show databases;
 ```
+
+## Backend
+
+Add new module:
+
+```
+nx g @nrwl/nest:module sales --project stp-backend
+nx g @nrwl/nest:controller sales/controller/sales --project stp-backend
+nx g @nrwl/nest:service sales/service/sales --project stp-backend
+```
