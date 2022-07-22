@@ -6,101 +6,101 @@ CREATE TABLE `status` (
 CREATE TABLE `user` (
   `id` varchar(100) PRIMARY KEY,
   `name` varchar(100),
-  `created_at` timestamp,
-  `created_by` varchar(100),
-  `status_id` int,
+  `created_at` timestamp NOT NULL,
+  `created_by` varchar(100) NOT NULL,
+  `status_id` int NOT NULL,
   `updated_at` timestamp,
   `updated_by` varchar(100)
 );
 
 CREATE TABLE `business` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
-  `name` varchar(100),
-  `created_at` timestamp,
-  `created_by` varchar(100),
-  `status_id` int,
+  `name` varchar(100) NOT NULL,
+  `created_at` timestamp NOT NULL,
+  `created_by` varchar(100) NOT NULL,
+  `status_id` int NOT NULL,
   `updated_at` timestamp,
   `updated_by` varchar(100)
 );
 
 CREATE TABLE `business_user` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
-  `created_at` timestamp,
-  `created_by` varchar(100),
-  `status_id` int,
+  `created_at` timestamp NOT NULL,
+  `created_by` varchar(100) NOT NULL,
+  `status_id` int NOT NULL,
   `updated_at` timestamp,
   `updated_by` varchar(100),
-  `business_id` int,
-  `user_id` varchar(100)
+  `business_id` int NOT NULL,
+  `user_id` varchar(100) NOT NULL
 );
 
 CREATE TABLE `project` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
-  `name` varchar(100),
-  `created_at` timestamp,
-  `created_by` varchar(100),
-  `status_id` int,
+  `name` varchar(100) NOT NULL,
+  `created_at` timestamp NOT NULL,
+  `created_by` varchar(100) NOT NULL,
+  `status_id` int NOT NULL,
   `updated_at` timestamp,
   `updated_by` varchar(100),
-  `business_id` int
+  `business_id` int NOT NULL
 );
 
 CREATE TABLE `log_check_in_out` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
-  `created_at` timestamp,
-  `created_by` varchar(100),
-  `status_id` int,
+  `created_at` timestamp NOT NULL,
+  `created_by` varchar(100) NOT NULL,
+  `status_id` int NOT NULL,
   `updated_at` timestamp,
   `updated_by` varchar(100),
-  `project_id` int,
-  `check_in_at` timestamp,
+  `project_id` int NOT NULL,
+  `check_in_at` timestamp NOT NULL,
   `check_out_at` timestamp
 );
 
 CREATE TABLE `progress_log` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
-  `created_at` timestamp,
-  `created_by` varchar(100),
-  `status_id` int,
+  `created_at` timestamp NOT NULL,
+  `created_by` varchar(100) NOT NULL,
+  `status_id` int NOT NULL,
   `updated_at` timestamp,
   `updated_by` varchar(100),
-  `project_id` int,
-  `comment` text
+  `project_id` int NOT NULL,
+  `comment` text NOT NULL
 );
 
 CREATE TABLE `progress_log_image` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
-  `created_at` timestamp,
-  `created_by` varchar(100),
-  `status_id` int,
+  `created_at` timestamp NOT NULL,
+  `created_by` varchar(100) NOT NULL,
+  `status_id` int NOT NULL,
   `updated_at` timestamp,
   `updated_by` varchar(100),
-  `progress_log_id` int,
-  `image_url` text
+  `progress_log_id` int NOT NULL,
+  `image_url` text NOT NULL
 );
 
 CREATE TABLE `expense_record` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
-  `created_at` timestamp,
-  `created_by` varchar(100),
-  `status_id` int,
+  `created_at` timestamp NOT NULL,
+  `created_by` varchar(100) NOT NULL,
+  `status_id` int NOT NULL,
   `updated_at` timestamp,
   `updated_by` varchar(100),
-  `project_id` int,
-  `comment` text,
-  `amount` double,
+  `project_id` int NOT NULL,
+  `comment` text NOT NULL,
+  `amount` double NOT NULL,
   `expected_amount` double
 );
 
 CREATE TABLE `expense_record_image` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
-  `created_at` timestamp,
-  `created_by` varchar(100),
-  `status_id` int,
+  `created_at` timestamp NOT NULL,
+  `created_by` varchar(100) NOT NULL,
+  `status_id` int NOT NULL,
   `updated_at` timestamp,
   `updated_by` varchar(100),
-  `expense_record_id` int,
-  `image_url` text
+  `expense_record_id` int NOT NULL,
+  `image_url` text NOT NULL
 );
 
 ALTER TABLE `user` ADD CONSTRAINT `status_user` FOREIGN KEY (`status_id`) REFERENCES `status` (`id`);

@@ -3,7 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { Status } from '../status/status.entity';
+import { Status } from '../entities/status.entity';
 import { StatusModule } from '../status/status.module';
 
 @Module({
