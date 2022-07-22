@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  mysql:
+    image: mysql
+    container_name: stp-mysql
+    environment:
+      - MYSQL_DATABASE=TENANT1
+      - MYSQL_ROOT_PASSWORD=root
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./db_data:/var/lib/mysql
+      - ./scripts/schema.sql:/docker-entrypoint-initdb.d/1.sql
+      - ./scripts/data.sql:/docker-entrypoint-initdb.d/2.sql
