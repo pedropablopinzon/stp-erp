@@ -10,12 +10,12 @@ import { Status } from '../../entities/status.entity';
 export class StatusService {
   constructor(
     @InjectRepository(Status)
-    private usersRepository: Repository<Status>
+    private statusRepository: Repository<Status>
   ) {}
 
   async read(id: number): Promise<StatusDocument> {
     try {
-      const record: Status = await this.usersRepository.findOneBy({ id });
+      const record: Status = await this.statusRepository.findOneBy({ id });
 
       const document: StatusDocument = {
         id: record.id,
@@ -36,7 +36,7 @@ export class StatusService {
 
   async readAll(): Promise<StatusDocument[]> {
     try {
-      const records: Status[] = await this.usersRepository.find();
+      const records: Status[] = await this.statusRepository.find();
       if (records.length === 0) {
         console.log('No matching records.');
         return [];
@@ -44,10 +44,10 @@ export class StatusService {
 
       const documents: StatusDocument[] = [];
 
-      records.forEach((documentData) => {
+      records.forEach((record: Status) => {
         const document: StatusDocument = {
-          id: documentData.id,
-          name: documentData.name,
+          id: record.id,
+          name: record.name,
         };
 
         documents.push(document);
@@ -66,7 +66,7 @@ export class StatusService {
   }
 
   async create(data: CreateStatusDto): Promise<StatusDocument> {
-    const record: Status = await this.usersRepository.save(data);
+    const record: Status = await this.statusRepository.save(data);
 
     const document: StatusDocument = {
       id: record.id,
@@ -78,7 +78,7 @@ export class StatusService {
 
   async update(id: number, data: UpdateStatusDto): Promise<UpdateResult> {
     try {
-      return await this.usersRepository.update(id, data);
+      return await this.statusRepository.update(id, data);
     } catch (err) {
       throw new HttpException(
         {
@@ -92,7 +92,7 @@ export class StatusService {
 
   async delete(id: number): Promise<DeleteResult> {
     try {
-      return await this.usersRepository.delete(id);
+      return await this.statusRepository.delete(id);
     } catch (err) {
       throw new HttpException(
         {
