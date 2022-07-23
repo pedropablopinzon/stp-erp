@@ -19,7 +19,7 @@ export class StatusController {
 
   @Get(':id')
   async read(@Req() request: Request, @Param() params) {
-    return this.statusService.findOne(parseInt(params.id));
+    return this.statusService.read(parseInt(params.id));
   }
 
   @Get()
@@ -27,7 +27,7 @@ export class StatusController {
     @Req() request: Request,
     @Query('businessId') businessId: string
   ) {
-    return await this.statusService.findAll();
+    return await this.statusService.readAll();
   }
 
   @Post()

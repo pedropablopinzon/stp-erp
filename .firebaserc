@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "stp-dev-2dfb7",
+    "prod": "stp-dev-2dfb7",
+    "staging": "stp-dev-2dfb7",
+    "dev": "stp-dev-2dfb7"
+  }
+}
