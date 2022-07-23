@@ -10,11 +10,8 @@ import {
 } from '@nestjs/common';
 import { Request } from 'express';
 
+import { CreateProgressLogDto, UpdateProgressLogDto } from '@stp-erp/data';
 import { getUserFromToken } from '../../auth/auth';
-import {
-  CreateProgressLogDto,
-  UpdateProgressLogDto,
-} from '../../dtos/progressLog.dto';
 import { ProgressLogService } from '../service/progress-log.service';
 
 @Controller('progress-log')

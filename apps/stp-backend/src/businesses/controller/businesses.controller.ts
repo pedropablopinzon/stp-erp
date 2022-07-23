@@ -1,8 +1,8 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post, Req } from '@nestjs/common';
 import { Request } from 'express';
 
+import { CreateBusinessDto, UpdateBusinessDto } from '@stp-erp/data';
 import { getUserFromToken } from '../../auth/auth';
-import { CreateBusinessDto, UpdateBusinessDto } from '../../dtos/businesses.dto';
 import { BusinessesService } from '../service/businesses.service';
 
 @Controller('businesses')

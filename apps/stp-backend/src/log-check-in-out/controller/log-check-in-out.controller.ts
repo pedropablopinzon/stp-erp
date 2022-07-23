@@ -10,11 +10,8 @@ import {
 } from '@nestjs/common';
 import { Request } from 'express';
 
+import { CreateLogCheckInOutDto, UpdateLogCheckInOutDto } from '@stp-erp/data';
 import { getUserFromToken } from '../../auth/auth';
-import {
-  CreateLogCheckInOutDto,
-  UpdateLogCheckInOutDto,
-} from '../../dtos/logCheckInOut.dto';
 import { LogCheckInOutService } from '../service/log-check-in-out.service';
 
 @Controller('log-check-in-out')

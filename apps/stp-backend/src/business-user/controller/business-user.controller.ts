@@ -10,11 +10,8 @@ import {
 } from '@nestjs/common';
 import { Request } from 'express';
 
+import { CreateBusinessUserDto, UpdateBusinessUserDto } from '@stp-erp/data';
 import { getUserFromToken } from '../../auth/auth';
-import {
-  CreateBusinessUserDto,
-  UpdateBusinessUserDto,
-} from '../../dtos/businessUser.dto';
 import { BusinessUserService } from '../service/business-user.service';
 
 @Controller('business-user')

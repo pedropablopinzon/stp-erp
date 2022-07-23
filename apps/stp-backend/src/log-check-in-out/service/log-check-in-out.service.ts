@@ -2,12 +2,9 @@ import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { DeleteResult, Repository, UpdateResult } from 'typeorm';
 
-import {
-  CreateLogCheckInOutDto,
-  UpdateLogCheckInOutDto,
-} from '../../dtos/logCheckInOut.dto';
-import { LogCheckInOutDocument } from '../../documents/logCheckInOut.document';
-import { LogCheckInOut } from '../../entities/logCheckInOut.entity';
+import { CreateLogCheckInOutDto, UpdateLogCheckInOutDto } from '@stp-erp/data';
+import { LogCheckInOutDocument } from '@stp-erp/data';
+import { LogCheckInOut } from '@stp-erp/data';
 
 @Injectable()
 export class LogCheckInOutService {
