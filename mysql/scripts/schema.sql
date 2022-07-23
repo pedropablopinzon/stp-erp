@@ -5,7 +5,7 @@ CREATE TABLE `status` (
 
 CREATE TABLE `user` (
   `id` varchar(100) PRIMARY KEY,
-  `name` varchar(100),
+  `display_name` varchar(100),
   `created_at` timestamp NOT NULL,
   `created_by` varchar(100) NOT NULL,
   `status_id` int NOT NULL,

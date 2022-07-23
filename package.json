@@ -9,9 +9,9 @@
     "use:dev": "ENV_STP=dev && cp config/$ENV_STP/env.json env.json && cp config/$ENV_STP/service-account.json service-account.json && firebase use $ENV_STP",
     "use:staging": "ENV_STP=staging && cp config/$ENV_STP/env.json env.json && cp config/$ENV_STP/service-account.json service-account.json && firebase use $ENV_STP",
     "use:prod": "ENV_STP=prod && cp config/$ENV_STP/env.json env.json && cp config/$ENV_STP/service-account.json service-account.json && firebase use $ENV_STP",
-    "use:dev-env": "ENV_STP=dev && cp config/$ENV_STP/env.json apps/stp-backend/env.json && cp config/$ENV_STP/service-account.json apps/stp-backend/service-account.json && firebase use $ENV_STP",
-    "use:dev-staging": "ENV_STP=staging && cp config/$ENV_STP/env.json apps/stp-backend/env.json && cp config/$ENV_STP/service-account.json apps/stp-backend/service-account.json && firebase use $ENV_STP",
-    "use:dev-prod": "ENV_STP=prod && cp config/$ENV_STP/env.json apps/stp-backend/env.json && cp config/$ENV_STP/service-account.json apps/stp-backend/service-account.json && firebase use $ENV_STP",
+    "use:dev-env": "ENV_STP=dev && cp config/$ENV_STP/.env apps/stp-backend/.env && cp config/$ENV_STP/env.json apps/stp-backend/env.json && cp config/$ENV_STP/service-account.json apps/stp-backend/service-account.json && firebase use $ENV_STP",
+    "use:dev-staging": "ENV_STP=staging && cp config/$ENV_STP/.env apps/stp-backend/.env && cp config/$ENV_STP/env.json apps/stp-backend/env.json && cp config/$ENV_STP/service-account.json apps/stp-backend/service-account.json && firebase use $ENV_STP",
+    "use:dev-prod": "ENV_STP=prod && cp config/$ENV_STP/.env apps/stp-backend/.env && cp config/$ENV_STP/env.json apps/stp-backend/env.json && cp config/$ENV_STP/service-account.json apps/stp-backend/service-account.json && firebase use $ENV_STP",
     "set:env": "test -f apps/stp-backend/env.json && firebase functions:config:unset serviceaccount && firebase functions:config:set serviceaccount=\"$(cat apps/stp-backend/service-account.json)\" && firebase functions:config:unset env && firebase functions:config:set env=\"$(cat apps/stp-backend/env.json)\" || echo \"Please add the file env.json before deploy.\" && firebase functions:config:get > apps/stp-backend/.runtimeconfig.json"
   },
   "private": true,
