@@ -14,6 +14,7 @@ import { FirebaseApp } from '../auth/firebase-app';
 
 import { Business } from '../entities/business.entity';
 import { BusinessUser } from '../entities/businessUser.entity';
+import { ExpenseRecord } from '../entities/expenseRecord.entity';
 import { LogCheckInOut } from '../entities/logCheckInOut.entity';
 import { ProgressLog } from '../entities/progressLog.entity';
 import { Project } from '../entities/project.entity';
@@ -22,6 +23,7 @@ import { User } from '../entities/user.entity';
 
 import { BusinessUserModule } from '../business-user/business-user.module';
 import { BusinessesModule } from '../businesses/businesses.module';
+import { ExpenseRecordModule } from '../expense-record/expense-record.module';
 import { LogCheckInOutModule } from '../log-check-in-out/log-check-in-out.module';
 import { ProgressLogModule } from '../progress-log/progress-log.module';
 import { ProjectsModule } from '../projects/projects.module';
@@ -41,6 +43,7 @@ import { UsersModule } from '../users/users.module';
       entities: [
         Business,
         BusinessUser,
+        ExpenseRecord,
         LogCheckInOut,
         ProgressLog,
         Project,
@@ -51,6 +54,7 @@ import { UsersModule } from '../users/users.module';
     }),
     BusinessUserModule,
     BusinessesModule,
+    ExpenseRecordModule,
     LogCheckInOutModule,
     ProgressLogModule,
     ProjectsModule,
