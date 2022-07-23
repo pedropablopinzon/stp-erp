@@ -11,6 +11,10 @@ export class CreateBusinessUserDto {
   @IsNotEmpty()
   @ApiProperty()
   readonly user_id: string;
+
+  @IsNumber()
+  @ApiProperty()
+  readonly status: number;
 }
 
 export class UpdateBusinessUserDto extends PartialType(CreateBusinessUserDto) {}
