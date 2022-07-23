@@ -14,12 +14,14 @@ import { FirebaseApp } from '../auth/firebase-app';
 
 import { Business } from '../entities/business.entity';
 import { BusinessUser } from '../entities/businessUser.entity';
+import { LogCheckInOut } from '../entities/logCheckInOut.entity';
 import { Project } from '../entities/project.entity';
 import { Status } from '../entities/status.entity';
 import { User } from '../entities/user.entity';
 
 import { BusinessUserModule } from '../business-user/business-user.module';
 import { BusinessesModule } from '../businesses/businesses.module';
+import { LogCheckInOutModule } from '../log-check-in-out/log-check-in-out.module';
 import { ProjectsModule } from '../projects/projects.module';
 import { StatusModule } from '../status/status.module';
 import { UsersModule } from '../users/users.module';
@@ -34,11 +36,12 @@ import { UsersModule } from '../users/users.module';
       username: process.env.DATABASE_USER,
       password: process.env.DATABASE_PASSWORD,
       database: process.env.DATABASE_NAME,
-      entities: [Business, BusinessUser, Project, Status, User],
+      entities: [Business, BusinessUser, LogCheckInOut, Project, Status, User],
       synchronize: false,
     }),
     BusinessUserModule,
     BusinessesModule,
+    LogCheckInOutModule,
     ProjectsModule,
     StatusModule,
     UsersModule,
