@@ -53,6 +53,7 @@ CREATE TABLE `log_check_in_out` (
   `updated_at` timestamp,
   `updated_by` varchar(100),
   `project_id` int NOT NULL,
+  `user_id` varchar(100) NOT NULL
   `check_in_at` timestamp NOT NULL,
   `check_out_at` timestamp
 );
@@ -65,6 +66,7 @@ CREATE TABLE `progress_log` (
   `updated_at` timestamp,
   `updated_by` varchar(100),
   `project_id` int NOT NULL,
+  `user_id` varchar(100) NOT NULL
   `comment` text NOT NULL
 );
 
@@ -87,6 +89,7 @@ CREATE TABLE `expense_record` (
   `updated_at` timestamp,
   `updated_by` varchar(100),
   `project_id` int NOT NULL,
+  `user_id` varchar(100) NOT NULL
   `comment` text NOT NULL,
   `amount` double NOT NULL,
   `expected_amount` double
