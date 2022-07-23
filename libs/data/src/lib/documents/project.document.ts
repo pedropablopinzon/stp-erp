@@ -1,7 +1,7 @@
 import { Tables } from '../enums/tables';
 
-export class LogCheckInOutDocument {
-  static collectionName = Tables.business;
+export class ProjectDocument {
+  static collectionName = Tables.project;
 
   id?: number;
 
@@ -11,8 +11,6 @@ export class LogCheckInOutDocument {
   updated_at?: Date;
   updated_by?: string;
 
-  project_id: number;
-  user_id: string;
-  check_in_at: Date;
-  check_out_at?: Date;
+  name: string;
+  business_id: number;
 }

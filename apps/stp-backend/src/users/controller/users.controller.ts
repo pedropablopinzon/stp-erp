@@ -10,8 +10,8 @@ import {
 } from '@nestjs/common';
 import { Request } from 'express';
 
+import { CreateUserDto, UpdateUserDto } from '@stp-erp/data';
 import { getUserFromToken } from '../../auth/auth';
-import { CreateUserDto, UpdateUserDto } from '../../dtos/users.dto';
 import { UsersService } from '../service/users.service';
 
 @Controller('users')

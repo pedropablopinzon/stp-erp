@@ -2,7 +2,7 @@ import { Request } from 'express';
 import * as admin from 'firebase-admin';
 import * as functions from 'firebase-functions';
 
-import { IUser } from '../interfaces/user.interface';
+import { IUser } from '@stp-erp/data';
 
 export const getUserFromToken = (req: Request): Promise<IUser | null> => {
   const token2 = req.headers.authorization;
@@ -29,7 +29,7 @@ export const getUserFromToken = (req: Request): Promise<IUser | null> => {
 };
 
 export const getUserFromContext = (
-  context: functions.https.CallableContext,
+  context: functions.https.CallableContext
 ): IUser => {
   if (context.auth) {
     return {

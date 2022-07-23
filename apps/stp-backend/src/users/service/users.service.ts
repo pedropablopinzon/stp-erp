@@ -2,9 +2,9 @@ import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { DeleteResult, Repository, UpdateResult } from 'typeorm';
 
-import { CreateUserDto, UpdateUserDto } from '../../dtos/users.dto';
-import { UserDocument } from '../../documents/user.document';
-import { User } from '../../entities/user.entity';
+import { CreateUserDto, UpdateUserDto } from '@stp-erp/data';
+import { UserDocument } from '@stp-erp/data';
+import { User } from '@stp-erp/data';
 
 @Injectable()
 export class UsersService {
