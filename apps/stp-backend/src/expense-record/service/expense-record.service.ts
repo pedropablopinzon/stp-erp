@@ -2,12 +2,9 @@ import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { DeleteResult, Repository, UpdateResult } from 'typeorm';
 
-import {
-  CreateExpenseRecordDto,
-  UpdateExpenseRecordDto,
-} from '../../dtos/expenseRecord.dto';
-import { ExpenseRecordDocument } from '../../documents/expenseRecord.document';
-import { ExpenseRecord } from '../../entities/expenseRecord.entity';
+import { CreateExpenseRecordDto, UpdateExpenseRecordDto } from '@stp-erp/data';
+import { ExpenseRecordDocument } from '@stp-erp/data';
+import { ExpenseRecord } from '@stp-erp/data';
 
 @Injectable()
 export class ExpenseRecordService {

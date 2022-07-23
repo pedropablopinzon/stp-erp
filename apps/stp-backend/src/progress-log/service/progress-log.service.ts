@@ -5,9 +5,9 @@ import { DeleteResult, Repository, UpdateResult } from 'typeorm';
 import {
   CreateProgressLogDto,
   UpdateProgressLogDto,
-} from '../../dtos/progressLog.dto';
-import { ProgressLogDocument } from '../../documents/progressLog.document';
-import { ProgressLog } from '../../entities/progressLog.entity';
+} from '@stp-erp/data';
+import { ProgressLogDocument } from '@stp-erp/data';
+import { ProgressLog } from '@stp-erp/data';
 
 @Injectable()
 export class ProgressLogService {

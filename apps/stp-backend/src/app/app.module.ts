@@ -12,14 +12,16 @@ import { AppService } from './app.service';
 import { PreAuthMiddleware } from '../auth/pre-auth-middleware';
 import { FirebaseApp } from '../auth/firebase-app';
 
-import { Business } from '../entities/business.entity';
-import { BusinessUser } from '../entities/businessUser.entity';
-import { ExpenseRecord } from '../entities/expenseRecord.entity';
-import { LogCheckInOut } from '../entities/logCheckInOut.entity';
-import { ProgressLog } from '../entities/progressLog.entity';
-import { Project } from '../entities/project.entity';
-import { Status } from '../entities/status.entity';
-import { User } from '../entities/user.entity';
+import {
+  Business,
+  BusinessUser,
+  ExpenseRecord,
+  LogCheckInOut,
+  ProgressLog,
+  Project,
+  Status,
+  User,
+} from '@stp-erp/data';
 
 import { BusinessUserModule } from '../business-user/business-user.module';
 import { BusinessesModule } from '../businesses/businesses.module';

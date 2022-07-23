@@ -2,9 +2,9 @@ import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { DeleteResult, Repository, UpdateResult } from 'typeorm';
 
-import { CreateStatusDto, UpdateStatusDto } from '../../dtos/status.dto';
-import { StatusDocument } from '../../documents/status.document';
-import { Status } from '../../entities/status.entity';
+import { CreateStatusDto, UpdateStatusDto } from '@stp-erp/data';
+import { StatusDocument } from '@stp-erp/data';
+import { Status } from '@stp-erp/data';
 
 @Injectable()
 export class StatusService {

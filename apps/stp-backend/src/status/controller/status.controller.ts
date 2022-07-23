@@ -10,7 +10,7 @@ import {
   Req,
 } from '@nestjs/common';
 
-import { CreateStatusDto, UpdateStatusDto } from '../../dtos/status.dto';
+import { CreateStatusDto, UpdateStatusDto } from '@stp-erp/data';
 import { StatusService } from '../service/status.service';
 
 @Controller('status')

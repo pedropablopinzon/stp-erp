@@ -5,9 +5,9 @@ import { DeleteResult, Repository, UpdateResult } from 'typeorm';
 import {
   CreateBusinessDto,
   UpdateBusinessDto,
-} from '../../dtos/businesses.dto';
-import { BusinessDocument } from '../../documents/business.document';
-import { Business } from '../../entities/business.entity';
+} from '@stp-erp/data';
+import { BusinessDocument } from '@stp-erp/data';
+import { Business } from '@stp-erp/data';
 
 @Injectable()
 export class BusinessesService {
